@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <div class="container">
+        {% for qoute in object_list %}
+        <div class="card">
+            <span class="border border-success">
+            <div class="card-header bg-dark text-white" style="">
+
+                {{ qoute.qoute_category }}
+
+            </div>
+            </span>
+            <span class="border">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ qoute.qoute|linebreaks }}</p>
+                    <footer class="blockquote-footer border-light">{{ qoute.author }}</footer>
+                </blockquote>
+            </div>
+            </span>
+        </div>
+        <br>
+        {% endfor %}
+
+    {% include 'pagination.html' %}
+
+    </div>
+
+    {% endblock content %}
+
+
+
